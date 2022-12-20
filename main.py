@@ -3,7 +3,6 @@ import string
 
 
 def game():
-
     words = {'1': ['table', 'It\'s an furniture.', 'Think about kitchen!'],
              '2': ['computer', 'It\'s a device.', 'You should use it right now.'],
              '3': ['tree', 'It\'s a plant.', 'Come on, what a problem? :)'],
@@ -35,7 +34,7 @@ def game():
                     playing_list[index] = letter
                     guess_word[index] = '_'
                     if '_' not in playing_list:
-                        print('Congrats! You won :)')
+                        print(f'\nCongrats, you guessed the word {"".join(playing_list)} :)')
                         if input('Do you wanna play again?\t y/n\n') == 'y':
                             game()
                         else:
@@ -47,7 +46,7 @@ def game():
         if lives == 2:
             print(f'{words[guess_word_index][1]} {words[guess_word_index][2]} ')
         elif lives <= 0:
-            print(f'{lives} tries remaining, you lose :(')
+            print(f'\n{lives} tries remaining, you lose :(')
             if input('Do you wanna play again?\t y/n\n') == 'y':
                 game()
             else:
