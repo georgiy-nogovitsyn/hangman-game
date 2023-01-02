@@ -23,8 +23,8 @@ def game():
         print(playing_list)
         while True:
             guess_letter = input(f'Letters that you already used {used_letters}\nGuess the letter: ')
-            if guess_letter in list(ascii_letters):
-                guess_letter.lower()
+            if guess_letter in list(ascii_letters) and guess_letter not in used_letters+playing_list:
+                guess_letter = guess_letter.lower()
                 break
             else:
                 print('Wrong value, you need to input only one letter from the English alphabet.')
